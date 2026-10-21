@@ -1,0 +1,98 @@
+/* =====================================================
+   PUEBLO SQL · estilos compartidos (index.html y juego.html)
+   Estilo "pixel": bordes gruesos, sombras duras, madera.
+   ===================================================== */
+
+/* ---- Colores: cámbialos aquí y cambia todo el juego ---- */
+:root{
+  --madera:#b5622d;      /* panel inferior */
+  --madera-claro:#e9b872;/* botones */
+  --madera-osc:#8a5a2b;  /* bordes */
+  --madera-muy:#5a3519;  /* sombras */
+  --crema:#fff4dc;       /* papel / cuadros de texto */
+  --texto:#3b2616;
+  --dorado:#f2b632;      /* botón principal */
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#2b1d14;color:var(--texto);
+     font-family:"Courier New",monospace;font-weight:bold}
+a{color:inherit;text-decoration:none}
+
+/* ---- Marco pixel reutilizable ---- */
+.pixel{border:4px solid var(--madera-muy);border-radius:4px;
+       box-shadow:inset 0 0 0 3px #d9a066,4px 4px 0 rgba(0,0,0,.35)}
+
+/* ---- Botones ---- */
+.btn{font:bold 14px "Courier New",monospace;color:var(--texto);background:var(--madera-claro);
+     border:3px solid var(--madera-muy);border-radius:4px;padding:8px 12px;cursor:pointer;
+     box-shadow:0 4px 0 var(--madera-muy)}
+.btn:hover:not(:disabled){filter:brightness(1.08)}
+.btn:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 var(--madera-muy)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn.principal{background:var(--dorado)}
+
+/* ---- Fondos: césped y adoquín dibujados con CSS ---- */
+.cesped{background-color:#6fbf4a;
+  background-image:radial-gradient(#8bd35f 2px,transparent 3px),radial-gradient(#4f9a38 2px,transparent 3px);
+  background-size:30px 30px,46px 46px;background-position:0 0,15px 20px}
+.adoquin{background-color:#9a8f86;
+  background-image:linear-gradient(#7d736b 2px,transparent 2px),linear-gradient(90deg,#7d736b 2px,transparent 2px);
+  background-size:32px 20px}
+
+/* ---- Globo de diálogo ---- */
+.globo{background:#fff7e0;border:3px solid var(--madera-osc);border-radius:8px;padding:8px 10px;font-size:14px}
+
+/* ---- Ventanas emergentes (guía, resultados) ---- */
+.velo{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;
+      justify-content:center;padding:14px;z-index:10}
+.ventana{background:var(--crema);width:100%;max-width:560px;max-height:90vh;display:flex;flex-direction:column}
+.ventana-top{background:var(--madera);color:#fbe8c8;padding:8px 12px;display:flex;justify-content:space-between;align-items:center}
+.ventana-top .x{background:none;border:0;color:inherit;font-size:16px;cursor:pointer}
+.ventana-cuerpo{padding:12px;overflow:auto;font-size:14px}
+.ventana-pie{padding:0 12px 12px;display:flex;gap:8px;justify-content:flex-end}
+.tip{border-left:5px solid var(--madera);padding:2px 0 2px 10px;margin-bottom:12px}
+.tip h4{margin:0 0 4px}.tip p{margin:0 0 6px;font-weight:normal}
+code{display:block;background:#3b2616;color:#ffe9b8;padding:6px 8px;border-radius:4px;font-size:13px}
+table{border-collapse:collapse;width:100%;font-size:13px;margin-bottom:8px}
+th{background:var(--madera);color:#fff}th,td{border:1px solid var(--madera-osc);padding:3px 6px;text-align:left}
+.ok{color:#2e7d32}.ko{color:#b3261e}
+
+/* ===== PÁGINA DE INICIO ===== */
+.portada{min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:18px;padding:28px 14px}
+.cartel{background:var(--madera);color:#fbe8c8;padding:14px 26px;font-size:30px;text-align:center;letter-spacing:2px;text-shadow:3px 3px 0 var(--madera-muy)}
+.intro{max-width:620px;background:var(--crema);padding:16px;font-weight:normal;line-height:1.5}
+.intro h2{margin:0 0 8px;font-size:17px}
+.conceptos{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.concepto{flex:1;min-width:150px;background:#fff;border:3px solid var(--madera-osc);border-radius:6px;padding:8px;font-size:13px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:#3b2616;color:#ffe9b8;padding:3px 8px;border-radius:4px;font-size:13px}
+.acciones{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+
+/* ===== PÁGINA DEL JUEGO ===== */
+#juego{width:100%;max-width:960px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
+.barra{display:flex;gap:8px;align-items:center;padding:8px;background:var(--madera-muy);flex-wrap:wrap}
+#tabs{flex:1;display:flex;gap:6px;flex-wrap:wrap}
+.tab.on{background:var(--dorado)}
+.escena{flex:1;display:grid;grid-template-columns:1fr 230px;min-height:380px;position:relative}
+.campo{padding:22px;display:flex;flex-wrap:wrap;gap:14px;align-content:center;justify-content:center;
+       border-right:8px solid #6b4423}
+.ficha{width:84px;padding:8px 4px;text-align:center;background:#7a4a2a;border:3px solid var(--madera-muy);
+       border-radius:12px;color:#f6e3c4;font-size:11px;transition:.25s}
+.ficha .ico{display:block;font-size:28px;margin-bottom:2px}
+.ficha.marcada{outline:4px solid #fff;outline-offset:3px;background:#9a6035;transform:scale(1.07)}
+.plaza{padding:14px;display:flex;flex-direction:column;align-items:center;gap:10px;justify-content:center}
+#npc{font-size:54px}
+#lechuza{position:absolute;left:10px;bottom:10px;display:none;align-items:flex-end;gap:8px;max-width:62%}
+#lechuza span{font-size:34px}
+.consola{background:var(--madera);border:6px solid var(--madera-osc);padding:10px}
+#titulo{color:#fbe8c8;font-size:13px;margin-bottom:6px}
+.fila{display:flex;gap:10px}
+#sql{flex:1;min-height:84px;resize:vertical;font:15px "Courier New",monospace;padding:8px;
+     border:3px solid var(--madera-osc);background:var(--crema);color:var(--texto);border-radius:4px}
+#botones{display:flex;flex-direction:column;gap:8px;width:150px}
+#ejecutar{flex:1;background:var(--dorado)}
+@media(max-width:640px){
+  .escena{grid-template-columns:1fr}.campo{border-right:0;border-bottom:8px solid #6b4423}
+  .plaza{flex-direction:row}.fila{flex-direction:column}#botones{width:100%;flex-direction:row}
+  #lechuza{max-width:92%}.cartel{font-size:22px}
+}

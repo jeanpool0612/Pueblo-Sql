@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pueblo SQL · Jugar</title>
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<div id="juego">
+  <!-- Barra superior: inicio, selector de misiones y guía -->
+  <header class="barra">
+    <a class="btn" href="index.html">🏠</a>
+    <div id="tabs"></div>
+    <button class="btn" id="btnGuia">📖 Guía</button>
+  </header>
+
+  <!-- Escena: campo (una ficha por fila) + plaza (vecino que pide algo) -->
+  <main class="escena">
+    <section class="campo cesped" id="campo"></section>
+    <aside class="plaza adoquin">
+      <div id="npc"></div>
+      <div class="globo" id="pregunta"></div>
+    </aside>
+    <div id="lechuza"><span>🦉</span><div class="globo" id="lechuzaMsg"></div></div>
+  </main>
+
+  <!-- Consola: aquí se escribe la consulta -->
+  <section class="consola">
+    <div id="titulo"></div>
+    <div class="fila">
+      <textarea id="sql" spellcheck="false" placeholder="Escribe tu consulta aquí…"></textarea>
+      <div id="botones">
+        <button class="btn" id="previa">Vista previa</button>
+        <button class="btn" id="pista">Pista 0/3</button>
+        <button class="btn" id="ejecutar">Ejecutar</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Orden importante: primero el motor y los datos, al final la lógica -->
+<script src="js/motor-sql.js"></script>
+<script src="js/misiones.js"></script>
+<script src="js/guia.js"></script>
+<script src="js/juego.js"></script>
+</body>
+</html>

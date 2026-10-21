@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pueblo SQL</title>
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<!-- PANTALLA DE INICIO: presentación del juego -->
+<div class="portada cesped">
+  <div class="cartel pixel">🏘️ PUEBLO SQL</div>
+
+  <div class="intro pixel">
+    <h2>¿De qué va esto?</h2>
+    <p>En este pueblo <b>los datos son los vecinos y las casas</b>. Cada vecino te pide algo,
+       tú escribes una consulta en SQL y el resultado se ve en el mapa.</p>
+    <div class="conceptos">
+      <div class="concepto">🗂️ <b>Tabla</b><br>Una lista: vecinos, casas, parcelas…</div>
+      <div class="concepto">➡️ <b>Fila</b><br>Un elemento de la lista: un vecino.</div>
+      <div class="concepto">📋 <b>Columna</b><br>Un dato: nombre, edad…</div>
+    </div>
+    <p>Comandos que vas a usar:</p>
+    <div class="chips"><span class="chip">SELECT</span><span class="chip">FROM</span><span class="chip">WHERE</span>
+      <span class="chip">AND / OR</span><span class="chip">ORDER BY</span></div>
+    <p>Si te atascas, la 🦉 lechuza te da hasta 3 pistas. Cuantas menos uses, más estrellas ganas.</p>
+  </div>
+
+  <div class="acciones">
+    <a class="btn principal" href="juego.html">▶ Jugar</a>
+    <button class="btn" id="btnGuia">📖 Guía de comandos</button>
+  </div>
+</div>
+
+<script src="js/guia.js"></script>
+<script>document.getElementById("btnGuia").onclick = abrirGuia;</script>
+</body>
+</html>
