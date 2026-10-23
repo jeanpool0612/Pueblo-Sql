@@ -96,3 +96,13 @@ th{background:var(--madera);color:#fff}th,td{border:1px solid var(--madera-osc);
   .plaza{flex-direction:row}.fila{flex-direction:column}#botones{width:100%;flex-direction:row}
   #lechuza{max-width:92%}.cartel{font-size:22px}
 }
+
+/* ===== MUNDOS 2 y 3: esquema de tablas, salidas de sentencias ===== */
+.esq{background:var(--crema);border:3px solid var(--madera-osc);border-radius:6px;padding:6px 8px;min-width:170px;font-size:13px}
+.esq small{color:#7a5a3a;font-weight:normal}
+.vacio{background:var(--crema);border:3px dashed var(--madera-osc);border-radius:6px;padding:16px;text-align:center}
+.leyenda{width:100%;text-align:center;font-size:11px;color:#fff;text-shadow:1px 1px 0 var(--madera-muy)}
+.salida{margin-bottom:8px}.salida p{margin:4px 0}
+#lechuzaMsg{white-space:pre-line}
+.ventana-cuerpo ul{margin:6px 0;padding-left:20px;font-weight:normal}
+.ventana-cuerpo td code{display:inline;padding:1px 4px}
